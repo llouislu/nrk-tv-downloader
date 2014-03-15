@@ -133,6 +133,7 @@ Public Class Form1
         Catch e As Exception
             MsgBox("[ERROR]" & e.Message)
         End Try
+        Return ""
     End Function
     Private Sub GetPageThread(ByVal obj As Object)
         Dim optionreceiver As getpageoption
@@ -503,7 +504,10 @@ nextloop:       'There's no "Countinue" in VB.Net. pity, old school way
     End Sub
     Private Sub savevideo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles savevideo.Click
         'initialize
-        quality = Nothing
+        Dim i As Integer = 0
+        For i = 0 To 8
+            quality(i) = Nothing
+        Next
 
         Dim exp As String = "[a-z|A-Z]:\\(.*)"
         If Not regexcheck(exp, savefolder.Text, result) Then

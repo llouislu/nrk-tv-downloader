@@ -59,12 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        Friend ReadOnly Property hdsdump() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("hdsdump", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
     End Module
 End Namespace
